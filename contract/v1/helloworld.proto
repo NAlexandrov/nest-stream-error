@@ -1,0 +1,23 @@
+// helloworld
+syntax = "proto3";
+
+package helloworld.v1;
+
+// HelloworldService
+service HelloworldService {
+  // Sends a greeting
+  rpc SayHello(SayHelloRequest) returns (SayHelloResponse) {}
+  rpc SayHelloStream(SayHelloRequest) returns (stream SayHelloResponse) {}
+}
+
+// The request message containing the user's name.
+message SayHelloRequest {
+  // name
+  string name = 1;
+}
+
+// The response message containing the greetings
+message SayHelloResponse {
+  // message
+  string message = 1;
+}
